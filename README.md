@@ -100,3 +100,9 @@ The frontend expects the backend at `http://localhost:3000` by default. Override
 - Leaflet (map)
 - Express + Prisma (SQLite)
 - Python (PuLP optimizer, Ollama explainer)
+
+## Credits
+
+- Made for **Hack Canada 2026**  
+- Built **solo** by **Jishnu**  
+- Screenshots and demo data are for hackathon purposes  
