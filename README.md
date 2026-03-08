@@ -1,8 +1,8 @@
 ![BioLoop AI](screenshots/header.png)
 
-AI-powered circular bioeconomy platform. Connects farm biomass supply with industrial demand using a real API, optimizer, and AI explanations.
-
 ![BioLoop AI](screenshots/ss.png)
+
+AI-powered circular bioeconomy platform. Connects farm biomass supply with industrial demand using a real API, optimizer, and AI explanations.
 
 ## File structure
 
