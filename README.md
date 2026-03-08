@@ -114,5 +114,5 @@ This project is a **base MVP**. It will be improved in the future, with more mod
 
 ## License
 
-Copyright (c) 2026 Jishnu. All rights reserved.  
+Copyright (c) 2026 Jishnu Setia. All rights reserved.  
 This code may not be copied, modified, or redistributed without explicit permission.
