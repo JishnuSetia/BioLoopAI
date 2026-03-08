@@ -115,5 +115,5 @@ This project is a **base MVP**. It will be improved in the future, with more mod
 ## Concept & License
 
 - The concept, design, and implementation of BioLoop AI are **original and proprietary**.  
-- Copyright (c) 2026 Jishnu. All rights reserved.  
+- Copyright (c) 2026 Jishnu Setia. All rights reserved.  
 - This code and concept **is not permitted to be copied, modified, reused, or redistributed** without explicit permission.
