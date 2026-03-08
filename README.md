@@ -7,7 +7,7 @@ Canadian agriculture is currently at a crossroads. As of 2026, farm debt has cli
 
 For years, 58 million tonnes of annual biomass (manure and crop residue) have been treated as a disposal problem. But in 2026, waste is a policy failure we can no longer afford.
 
-![BioLoop AI](screenshots/stats.png)
+![BioLoop AI](screenshots/statistics.png)
 
 ### The Solution: BioLoop AI
 BioLoop AI is an optimization marketplace that connects the "waste" of the farm to the "feedstock" of the future. We use AI to solve the logistics of the circular economy, ensuring that every biomass exchange is profitable for the farmer and efficient for the buyer.
