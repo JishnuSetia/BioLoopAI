@@ -112,7 +112,8 @@ The frontend expects the backend at `http://localhost:3000` by default. Override
 
 This project is a **base MVP**. It will be improved in the future, with more modules and features added. This serves as the **foundation** for BioLoop AI.
 
-## License
+## Concept & License
 
-Copyright (c) 2026 Jishnu Setia. All rights reserved.  
-This code may not be copied, modified, or redistributed without explicit permission.
+- The concept, design, and implementation of BioLoop AI are **original and proprietary**.  
+- Copyright (c) 2026 Jishnu. All rights reserved.  
+- This code and concept **may not be copied, modified, reused, or redistributed** without explicit permission.
