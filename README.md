@@ -1,5 +1,3 @@
-# BioLoop AI – Full-Stack MVP
-
 ![BioLoop AI](screenshots/header.png)
 
 AI-powered circular bioeconomy platform. Connects farm biomass supply with industrial demand using a real API, optimizer, and AI explanations.
