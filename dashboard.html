@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – BioLoop AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="dashboard">
+  <header class="dash-header">
+    <div class="container">
+      <a href="dashboard.html" class="logo">BioLoop AI</a>
+      <div class="dash-header-actions">
+        <span class="user-email" id="user-email">user@example.com</span>
+        <button type="button" class="btn btn-secondary" id="btn-logout">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dash-main container">
+    <div class="dash-profile-header card">
+      <div class="profile-info">
+        <h2 id="profile-name">Loading profile...</h2>
+        <p id="profile-role-label" class="muted">Role</p>
+      </div>
+      <div class="profile-actions">
+        <div class="toggle-group">
+          <label class="switch">
+            <input type="checkbox" id="availability-toggle" checked>
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label">Available for matching</span>
+        </div>
+        <button type="button" class="btn btn-secondary" id="btn-edit-profile">Edit Profile</button>
+      </div>
+    </div>
+
+    <h2 class="section-title">Impact Summary</h2>
+    <div class="impact-grid" id="impact-cards">
+      <!-- Filled by dashboard.js -->
+    </div>
+
+    <!-- Listings Section -->
+    <h2 class="section-title">My Listings</h2>
+    <div class="listing-grid" id="listing-cards">
+      <!-- Filled by dashboard.js -->
+    </div>
+
+    <h2 class="section-title">Simulation</h2>
+    <div class="card sliders-section">
+      <div class="slider-group">
+        <label>Transport cost multiplier <span class="value" id="transport-value">1.0×</span></label>
+        <input type="range" id="transport-slider" min="0.5" max="2" step="0.1" value="1" />
+      </div>
+      <div class="slider-group">
+        <label>Allocation scenario (revenue vs. distance) <span class="value"
+            id="allocation-value">Balanced</span></label>
+        <input type="range" id="allocation-slider" min="0" max="2" step="1" value="1" />
+      </div>
+      <div class="slider-group">
+        <label>Supply multiplier <span class="value" id="supply-value">1.0×</span></label>
+        <input type="range" id="supply-slider" min="0.5" max="2" step="0.1" value="1" />
+      </div>
+      <div class="slider-group">
+        <label>Demand multiplier <span class="value" id="demand-value">1.0×</span></label>
+        <input type="range" id="demand-slider" min="0.5" max="2" step="0.1" value="1" />
+      </div>
+    </div>
+
+    <h2 class="section-title" id="matches-title">Match results</h2>
+    <div class="table-wrap">
+      <table class="table" id="matches-table">
+        <thead>
+          <tr id="matches-thead">
+            <!-- Filled by dashboard.js -->
+          </tr>
+        </thead>
+        <tbody id="matches-tbody">
+          <!-- Filled by dashboard.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">My Contracts</h2>
+    <div class="card contracts-section">
+      <div class="table-wrap">
+        <table class="table" id="contracts-table">
+          <thead>
+            <tr id="contracts-thead">
+              <!-- Filled by dashboard.js -->
+            </tr>
+          </thead>
+          <tbody id="contracts-tbody">
+            <!-- Filled by dashboard.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="section-title">Map Overview</h2>
+    <div class="map-section">
+      <div id="map" class="map-container"></div>
+    </div>
+
+    <h2 class="section-title">Charts</h2>
+    <div class="charts-section">
+      <div class="chart-card">
+        <h3>Biomass by type</h3>
+        <div class="chart-container"><canvas id="chart-biomass"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Revenue distribution</h3>
+        <div class="chart-container"><canvas id="chart-revenue"></canvas></div>
+      </div>
+    </div>
+
+    <h2 class="section-title">AI insights</h2>
+    <div class="card ai-panel" id="ai-panel">
+      <!-- Filled by ai-insights.js -->
+    </div>
+  </main>
+
+  <!-- Profile Edit Modals -->
+  <div class="modal" id="profile-modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
+      <div class="modal-header">
+        <h3 id="profile-modal-title">Edit Profile</h3>
+        <button type="button" class="modal-close" id="profile-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="profile-modal-body">
+        <!-- Rendered based on role -->
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="detail-modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+      <div class="modal-header">
+        <h3 id="detail-modal-title">Details</h3>
+        <button type="button" class="modal-close" id="detail-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="detail-modal-body"></div>
+    </div>
+  </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script type="module" src="js/dashboard.js?v=4"></script>
+</body>
+
+</html>

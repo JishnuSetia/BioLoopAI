@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String          @id @default(cuid())
+  email                 String          @unique
+  hashed_password       String
+  role                  String          @default("FARM_MANAGER")
+  createdAt             DateTime        @default(now())
+  collaborationRequests Collaboration[] @relation("CollaborationRequester")
+  farms                 Farm?
+  industries            Industry?
+
+  @@map("users")
+}
+
+model Farm {
+  id               String          @id @default(cuid())
+  name             String
+  waste_type       String
+  quantity         Float
+  desired_type     String?
+  desired_quantity Float?
+  supply_active    Boolean         @default(true)
+  demand_active    Boolean         @default(true)
+  latitude         Float
+  longitude        Float
+  description      String?
+  ownerId          String?         @unique
+  isActive         Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  collaborations   Collaboration[]
+  owner            User?           @relation(fields: [ownerId], references: [id])
+  matches          Match[]
+
+  @@map("farms")
+}
+
+model Industry {
+  id                 String          @id @default(cuid())
+  name               String
+  required_type      String
+  quantity_needed    Float
+  byproduct_type     String?
+  byproduct_quantity Float?
+  supply_active      Boolean         @default(true)
+  demand_active      Boolean         @default(true)
+  latitude           Float
+  longitude          Float
+  description        String?
+  ownerId            String?         @unique
+  isActive           Boolean         @default(true)
+  createdAt          DateTime        @default(now())
+  collaborations     Collaboration[]
+  owner              User?           @relation(fields: [ownerId], references: [id])
+  matches            Match[]
+
+  @@map("industries")
+}
+
+model Collaboration {
+  id              String    @id @default(cuid())
+  farm_id         String
+  industry_id     String
+  flow            String    @default("FARM_TO_INDUSTRY")
+  status          String    @default("PENDING")
+  notes           String?
+  requestedById   String?
+  requestedByRole String?
+  respondedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  requestedBy     User?     @relation("CollaborationRequester", fields: [requestedById], references: [id])
+  industry        Industry  @relation(fields: [industry_id], references: [id], onDelete: Cascade)
+  farm            Farm      @relation(fields: [farm_id], references: [id], onDelete: Cascade)
+
+  @@index([farm_id, industry_id, flow])
+  @@map("collaborations")
+}
+
+model Match {
+  id                   String   @id @default(cuid())
+  farm_id              String
+  industry_id          String
+  flow                 String   @default("FARM_TO_INDUSTRY")
+  quantity_matched     Float
+  distance_km          Float
+  transport_cost       Float
+  revenue              Float
+  sustainability_score Float
+  industry             Industry @relation(fields: [industry_id], references: [id], onDelete: Cascade)
+  farm                 Farm     @relation(fields: [farm_id], references: [id], onDelete: Cascade)
+
+  @@unique([farm_id, industry_id, flow])
+  @@map("matches")
+}

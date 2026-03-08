@@ -1,0 +1,3 @@
+# BioLoop AI – Python optimization and AI explainer
+pulp>=2.7.0
+requests>=2.31.0

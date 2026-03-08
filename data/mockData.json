@@ -1,0 +1,165 @@
+{
+  "auth": {
+    "mockJwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.bioloop-mock-token",
+    "mockUser": {
+      "email": "user@example.com",
+      "name": "BioLoop User"
+    }
+  },
+  "impactSummary": {
+    "totalBiomassMatched": 12450,
+    "unit": "tonnes",
+    "revenue": 892000,
+    "currency": "EUR",
+    "co2Saved": 3420,
+    "co2Unit": "tCO₂e",
+    "landfillDiverted": 9800,
+    "landfillUnit": "tonnes"
+  },
+  "farms": [
+    {
+      "id": "f1",
+      "name": "Green Valley Farm",
+      "location": { "lat": 52.52, "lng": 13.405 },
+      "biomassType": "manure",
+      "quantity": 1200,
+      "unit": "tonnes/year",
+      "availableFrom": "2025-04-01"
+    },
+    {
+      "id": "f2",
+      "name": "Sunrise Agro",
+      "location": { "lat": 52.37, "lng": 13.10 },
+      "biomassType": "crop residue",
+      "quantity": 800,
+      "unit": "tonnes/year",
+      "availableFrom": "2025-06-01"
+    },
+    {
+      "id": "f3",
+      "name": "North Field Co-op",
+      "location": { "lat": 52.62, "lng": 13.55 },
+      "biomassType": "straw",
+      "quantity": 1500,
+      "unit": "tonnes/year",
+      "availableFrom": "2025-07-15"
+    }
+  ],
+  "industries": [
+    {
+      "id": "i1",
+      "name": "BioEnergy GmbH",
+      "location": { "lat": 52.48, "lng": 13.38 },
+      "demandType": "biogas feedstock",
+      "quantity": 2000,
+      "unit": "tonnes/year"
+    },
+    {
+      "id": "i2",
+      "name": "Green Fertilizer AG",
+      "location": { "lat": 52.45, "lng": 13.25 },
+      "demandType": "organic fertilizer",
+      "quantity": 1500,
+      "unit": "tonnes/year"
+    },
+    {
+      "id": "i3",
+      "name": "Circular Materials Ltd",
+      "location": { "lat": 52.55, "lng": 13.42 },
+      "demandType": "biomass pellets",
+      "quantity": 1000,
+      "unit": "tonnes/year"
+    }
+  ],
+  "matches": [
+    {
+      "id": "m1",
+      "farmId": "f1",
+      "farmName": "Green Valley Farm",
+      "industryId": "i1",
+      "industryName": "BioEnergy GmbH",
+      "biomassType": "manure",
+      "quantity": 800,
+      "unit": "tonnes",
+      "revenue": 64000,
+      "transportCost": 4200,
+      "distanceKm": 28,
+      "co2Saved": 240
+    },
+    {
+      "id": "m2",
+      "farmId": "f1",
+      "farmName": "Green Valley Farm",
+      "industryId": "i2",
+      "industryName": "Green Fertilizer AG",
+      "biomassType": "manure",
+      "quantity": 400,
+      "unit": "tonnes",
+      "revenue": 32000,
+      "transportCost": 1800,
+      "distanceKm": 18,
+      "co2Saved": 120
+    },
+    {
+      "id": "m3",
+      "farmId": "f2",
+      "farmName": "Sunrise Agro",
+      "industryId": "i3",
+      "industryName": "Circular Materials Ltd",
+      "biomassType": "crop residue",
+      "quantity": 600,
+      "unit": "tonnes",
+      "revenue": 48000,
+      "transportCost": 2100,
+      "distanceKm": 22,
+      "co2Saved": 180
+    },
+    {
+      "id": "m4",
+      "farmId": "f3",
+      "farmName": "North Field Co-op",
+      "industryId": "i1",
+      "industryName": "BioEnergy GmbH",
+      "biomassType": "straw",
+      "quantity": 1000,
+      "unit": "tonnes",
+      "revenue": 75000,
+      "transportCost": 5200,
+      "distanceKm": 45,
+      "co2Saved": 300
+    }
+  ],
+  "aiInsights": [
+    {
+      "id": "insight1",
+      "title": "Optimal routing",
+      "summary": "Consolidating Green Valley Farm deliveries to BioEnergy GmbH and Green Fertilizer AG in the same corridor reduces empty return trips by ~15% and cuts transport emissions.",
+      "confidence": 0.92,
+      "category": "logistics"
+    },
+    {
+      "id": "insight2",
+      "title": "Seasonal opportunity",
+      "summary": "North Field Co-op straw availability peaks in July–August. Advancing the contract with BioEnergy GmbH by 2 weeks could capture an additional 200 tonnes at current prices.",
+      "confidence": 0.88,
+      "category": "timing"
+    },
+    {
+      "id": "insight3",
+      "title": "Carbon impact",
+      "summary": "Current matches avoid an estimated 840 tCO₂e vs. landfill disposal. Prioritizing shorter distances for manure (higher moisture) would improve the carbon intensity ratio further.",
+      "confidence": 0.85,
+      "category": "sustainability"
+    }
+  ],
+  "chartData": {
+    "biomassByType": {
+      "labels": ["Manure", "Crop residue", "Straw"],
+      "values": [1200, 800, 1500]
+    },
+    "revenueByMonth": {
+      "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      "values": [120000, 145000, 132000, 158000, 167000, 170000]
+    }
+  }
+}
