@@ -2,7 +2,29 @@
 
 ![BioLoop AI](screenshots/ss.png)
 
-AI-powered circular bioeconomy platform. Connects farm biomass supply with industrial demand using a real API, optimizer, and AI explanations.
+### The Problem: A Sector Under Pressure
+Canadian agriculture is currently at a crossroads. As of 2026, farm debt has climbed to $167 billion, and interest costs now swallow 11.5% of gross revenue. At the same time, the sector is responsible for 10% of Canada’s total GHG emissions, primarily from methane and fertilizer use.
+
+For years, 58 million tonnes of annual biomass (manure and crop residue) have been treated as a disposal problem. But in 2026, waste is a policy failure we can no longer afford.
+
+### The Solution: BioLoop AI
+BioLoop AI is an optimization marketplace that connects the "waste" of the farm to the "feedstock" of the future. We use AI to solve the logistics of the circular economy, ensuring that every biomass exchange is profitable for the farmer and efficient for the buyer.
+
+### The Alignment: Meeting Canada’s 2030 Goals
+BioLoop AI is purpose-built to help Canada hit its high-stakes environmental targets:
+
+- The Methane Challenge: Canada has committed to a 35% reduction in domestic methane emissions by 2030. BioLoop AI diverts manure into anaerobic digesters, preventing methane from venting into the atmosphere.
+
+- The Clean Fuel Mandate: Under the Clean Fuel Regulations (CFR), fuel suppliers must reduce the carbon intensity of their products by 15% by 2030. BioLoop AI provides the domestic, low-carbon feedstock needed to produce the 8.5 billion litres of biofuels Canada requires to meet this goal.
+
+- Fertilizer Emissions: Canada is aiming for a 30% reduction in emissions from fertilizer. By facilitating the exchange of processed organic digestate back to farms, BioLoop AI replaces synthetic nitrogen with circular, bio-based alternatives.
+
+- Zero Waste Vision: We directly support the national goal of diverting 75% of organic waste from landfills by 2030, turning "trash" into a strategic industrial asset.
+
+### The Opportunity: Profit Meets Policy
+In 2026, sustainability is no longer an "extra"—it is the baseline for farm profitability. BioLoop AI transforms environmental compliance into a secondary income stream, potentially swinging a farm's annual bottom line by $35,000 or more.
+
+We aren't just building a marketplace; we are building the infrastructure for a Net-Zero 2050.
 
 ## File structure
 
