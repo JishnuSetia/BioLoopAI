@@ -105,4 +105,9 @@ The frontend expects the backend at `http://localhost:3000` by default. Override
 
 - Made for **Hack Canada 2026**  
 - Built **solo** by **Jishnu**  
+- AI-assisted development: used generative AI for code scaffolding, frontend design, and prototyping  
 - Screenshots and demo data are for hackathon purposes  
+
+## Disclaimer
+
+This project is a **base MVP**. It will be improved in the future, with more modules and features added. This serves as the **foundation** for BioLoop AI.
